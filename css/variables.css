@@ -1,0 +1,39 @@
+/* ==========================================================================
+   CSS Variables (Design Tokens for GrowBiz Websites)
+   ========================================================================== */
+
+:root {
+    /* --- Core Colors --- */
+    --bg-dark: #0b101e;          /* Deep navy blue background */
+    --bg-darker: #060913;        /* Slightly darker for footer/navbar */
+    
+    /* Primary Accents */
+    --primary-orange: #ff7a00;   /* Bright call-to-action orange */
+    --primary-orange-hover: #e66e00;
+
+    /* --- Typography Colors --- */
+    --text-main: #ffffff;        /* Pure white for headings and main text */
+    --text-muted: #a0a8b5;       /* Light grayish-blue for paragraphs */
+
+    /* --- Glassmorphism Settings --- */
+    /* Backgrounds and borders for the frosted glass cards */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-hover-border: rgba(255, 255, 255, 0.2);
+    
+    /* Blur and Drop Shadows */
+    --glass-blur: blur(12px);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    /* --- Glowing Orbs (Background effects) --- */
+    /* These create the soft neon lighting behind the UI */
+    --glow-blue: radial-gradient(circle, rgba(66, 116, 255, 0.15) 0%, rgba(11, 16, 30, 0) 60%);
+    --glow-orange: radial-gradient(circle, rgba(255, 122, 0, 0.12) 0%, rgba(11, 16, 30, 0) 60%);
+
+    /* --- Typography --- */
+    --font-main: 'Poppins', sans-serif;
+    
+    /* --- Transitions --- */
+    --transition-speed: 0.3s;
+    --transition-ease: ease;
+}

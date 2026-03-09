@@ -1,0 +1,372 @@
+/* ==========================================================================
+   Main Stylesheet (Layout & Section Specifics)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Reset & Base Styles
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Glowing Orbs */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    width: 800px;
+    height: 800px;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+body::before {
+    top: -200px;
+    right: -200px;
+    background: var(--glow-blue);
+}
+
+body::after {
+    top: 40%;
+    left: -300px;
+    background: var(--glow-orange);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: color var(--transition-speed) var(--transition-ease);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+/* ==========================================================================
+   2. Typography
+   ========================================================================== */
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   3. Utility Layouts
+   ========================================================================== */
+.grid-4-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.split-layout {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.split-layout.align-start {
+    align-items: flex-start;
+}
+
+/* ==========================================================================
+   4. Navigation / Header
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(11, 16, 30, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0; 
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav a:hover, nav a.active-link {
+    color: var(--primary-orange);
+}
+
+/* ==========================================================================
+   5. Hero Section
+   ========================================================================== */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Accounts for fixed header */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1.2;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-image {
+    flex: 0.8;
+}
+
+/* ==========================================================================
+   6. Specific Section Tweaks
+   ========================================================================== */
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    padding: 20px;
+}
+
+/* Portfolio Layout */
+.portfolio-grid {
+    flex: 1.2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.portfolio-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    transition: transform var(--transition-speed) var(--transition-ease);
+}
+
+.portfolio-item:hover {
+    transform: scale(1.02);
+}
+
+.portfolio-item img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.portfolio-item h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Forms layout inside split section */
+.form-card {
+    flex: 0.8;
+}
+
+#contact .form-card {
+    flex: 1;
+}
+
+/* Testimonials Layout */
+.testimonial-card i.fa-quote-left {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.15);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background var(--transition-speed) var(--transition-ease);
+}
+
+.dot.active {
+    background: var(--primary-orange);
+}
+
+/* Contact Details Layout */
+.contact-details {
+    flex: 1;
+}
+
+.phone-number {
+    font-size: 3rem;
+    color: var(--text-main);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   7. Footer
+   ========================================================================== */
+footer {
+    border-top: 1px solid var(--glass-border);
+    background: var(--bg-darker);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.footer-links h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-orange);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    background: var(--glass-bg);
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--glass-border);
+    transition: all var(--transition-speed) var(--transition-ease);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.footer-socials a:hover {
+    color: var(--text-main);
+    background: var(--primary-orange);
+    border-color: var(--primary-orange);
+}
+
+.copyright {
+    padding-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   8. Media Queries (Mobile Responsiveness)
+   ========================================================================== */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8rem; }
+    .grid-4-cols { grid-template-columns: repeat(2, 1fr); }
+    .grid-3-cols { grid-template-columns: repeat(1, 1fr); }
+    .split-layout { flex-direction: column; }
+    .portfolio-grid, .form-card, .contact-details { width: 100%; }
+}
+
+@media (max-width: 768px) {
+    nav { display: none; } /* Consider adding a mobile menu toggle in JS */
+    .hero-content { flex-direction: column; text-align: center; }
+    .hero-buttons { justify-content: center; }
+    .grid-4-cols { grid-template-columns: 1fr; }
+    .footer-content { flex-direction: column; gap: 30px; text-align: center; }
+    .footer-socials { justify-content: center; }
+    .phone-number { font-size: 2.5rem; }
+}

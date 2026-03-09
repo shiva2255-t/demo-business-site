@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Components (Reusable UI Elements for GrowBiz Websites)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Buttons
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-speed) var(--transition-ease);
+    text-align: center;
+    border: none;
+    font-family: var(--font-main);
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-orange);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+    background-color: rgba(255, 122, 0, 0.05);
+}
+
+.btn-full {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   2. Glassmorphism Cards
+   ========================================================================== */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur); /* Safari support */
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--glass-shadow);
+    transition: transform var(--transition-speed) var(--transition-ease), 
+                border-color var(--transition-speed) var(--transition-ease);
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--glass-hover-border);
+}
+
+/* ==========================================================================
+   3. Form Elements (Inputs, Textareas, Selects)
+   ========================================================================== */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    transition: border-color var(--transition-speed) var(--transition-ease), 
+                background var(--transition-speed) var(--transition-ease);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.2);
+}
+
+select option {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
+
+textarea {
+    resize: vertical; /* Allow users to resize text area vertically only */
+}
+
+/* ==========================================================================
+   4. Icons (Works for both FontAwesome <i> and Custom <svg> / <img>)
+   ========================================================================== */
+.icon-large {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.icon-small {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   5. Client Profile Snippet (Used in Testimonials)
+   ========================================================================== */
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.client-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--glass-border);
+}
+
+.client-info h4 {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.client-info span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
